@@ -29,7 +29,7 @@ const Tutorial = () => {
                     overlayColor: 'rgba(79, 26, 0, 0.4)',
                     primaryColor: '#000',
                     textColor: '#004a14',
-                    width: 900,
+                    width: 300,
                     zIndex: 1000,
                 }
             }}
