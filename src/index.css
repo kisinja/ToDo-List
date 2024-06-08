@@ -102,4 +102,5 @@ li {
 .no-task-container p {
     font-size: 1rem;
     color: red;
+    font-style: italic;
 }
