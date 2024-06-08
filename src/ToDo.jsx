@@ -126,7 +126,7 @@ const ToDo = () => {
                     </>
                 ) : (
                     <div className='no-task-container step-2'>
-                        <p>Click the {'"'}Add{'"'} button <br /> after entering your task in the input above !!</p>
+                        <p>No Tasks!!</p>
                     </div>
                 )}
             </div>

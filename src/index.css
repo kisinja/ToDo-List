@@ -100,8 +100,9 @@ li {
 }
 
 .no-task-container p {
-    font-size: 1rem;
-    color: red;
+    font-size: 1.8rem;
+    color: black;
+    font-weight: bold;
     font-style: italic;
 }
 
