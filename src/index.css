@@ -5,7 +5,7 @@ body {
 
 .todo-list {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 h1 {
@@ -103,4 +103,10 @@ li {
     font-size: 1rem;
     color: red;
     font-style: italic;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
 }

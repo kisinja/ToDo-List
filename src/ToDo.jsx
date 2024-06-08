@@ -2,6 +2,8 @@ import { useState } from 'react';
 import deleteBtn from './assets/delete.svg';
 import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
+import Tutorial from './Tutorial';
+import Footer from './Footer';
 
 const ToDo = () => {
     const [tasks, setTasks] = useState([]);
@@ -39,7 +41,7 @@ const ToDo = () => {
             duration: 3000,
             close: true,
             backgroundColor: "red",
-            color:"white"
+            color: "white"
         }).showToast();
     };
 
@@ -74,59 +76,65 @@ const ToDo = () => {
     };
 
     return (
-        <div className='todo-list'>
-            <h1>To-Do-List</h1>
+        <>
+            <div className='todo-list'>
+                <h1>To-Do-List</h1>
 
-            <div>
-                <input type="text"
-                    value={newTask}
-                    placeholder='Enter a task...'
-                    onChange={handleInputChange} />
-                <button
-                    onClick={addTask}
-                    className='add-btn'
-                >
-                    Add
-                </button>
-            </div>
-
-            {tasks.length > 0 ? (
-                <>
-                    <ol>
-                        {tasks.map((task, index) =>
-                            <li key={index}>
-                                <span className='text'>{task}</span>
-                                <button
-                                    className="delete-btn"
-                                    onClick={() => deleteTask(index)}
-                                    title='Delete Task'
-                                >
-                                    <img src={deleteBtn} alt="delete" />
-                                </button>
-                                <button
-                                    className="move-btn"
-                                    onClick={() => moveTaskUp(index)}
-                                    title="Move Up"
-                                >
-                                    👆
-                                </button>
-                                <button
-                                    className="move-btn"
-                                    onClick={() => moveTaskDown(index)}
-                                    title="Move Down"
-                                >
-                                    👇
-                                </button>
-                            </li>
-                        )}
-                    </ol>
-                </>
-            ) : (
-                <div className='no-task-container'>
-                    <p>Click the {'"'}Add{'"'} button <br /> after entering your task in the input above !!</p>
+                <div className='step-1'>
+                    <input type="text"
+                        value={newTask}
+                        placeholder='Enter a task...'
+                        onChange={handleInputChange} />
+                    <button
+                        onClick={addTask}
+                        className='add-btn'
+                    >
+                        Add
+                    </button>
                 </div>
-            )}
-        </div>
+
+                {tasks.length > 0 ? (
+                    <>
+                        <ol>
+                            {tasks.map((task, index) =>
+                                <li key={index}>
+                                    <span className='text'>{task}</span>
+                                    <button
+                                        className="delete-btn"
+                                        onClick={() => deleteTask(index)}
+                                        title='Delete Task'
+                                    >
+                                        <img src={deleteBtn} alt="delete" />
+                                    </button>
+                                    <button
+                                        className="move-btn"
+                                        onClick={() => moveTaskUp(index)}
+                                        title="Move Up"
+                                    >
+                                        👆
+                                    </button>
+                                    <button
+                                        className="move-btn"
+                                        onClick={() => moveTaskDown(index)}
+                                        title="Move Down"
+                                    >
+                                        👇
+                                    </button>
+                                </li>
+                            )}
+                        </ol>
+                    </>
+                ) : (
+                    <div className='no-task-container step-2'>
+                        <p>Click the {'"'}Add{'"'} button <br /> after entering your task in the input above !!</p>
+                    </div>
+                )}
+            </div>
+            <Tutorial />
+            <div className="step-3">
+                <Footer />
+            </div>
+        </>
     );
 };
 
